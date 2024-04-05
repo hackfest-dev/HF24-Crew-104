@@ -7,6 +7,8 @@ import SignupFormCustomer from "./Components/LoginSignup/SignUpFormCustomer";
 import ForgotPassword from "./Components/LoginSignup/ForgotPassword";
 import ResetPassword from "./Components/LoginSignup/ResetPassword";
 import SignupOtp from "./Components/LoginSignup/SignupOtp";
+import Schemes from "./Components/FarmerDashboard/Schemes";
+
 function App() {
   return (
     <Router>
@@ -19,6 +21,7 @@ function App() {
         <Route path="/forgot-password" element={<ForgotPassword />}></Route>
         <Route path="/reset-password" element={<ResetPassword />}></Route>
         <Route path="/otpforsignup" element={<SignupOtp />}></Route>
+        <Route path="/schemes" element={<Schemes />}></Route>
       </Routes>
     </Router>
   );
