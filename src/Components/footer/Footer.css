@@ -1,97 +1,90 @@
-.footer{
-    padding: 4rem 6rem;
-     background-color:#778138;
-    color:white;
-    
+.footer {
+  padding: 1rem 6rem;
+  background-color: #778138;
+  color: white;
 }
 
-.top{
-    display: flex;
-    align-items: center;
-    text-align: start;
-    justify-content: space-between;
-   
+.top {
+  display: flex;
+  align-items: center;
+  text-align: start;
+  justify-content: space-between;
 }
 .top .left-section {
-    margin-right: 2rem; 
-    margin-top: 1rem;
-  }
-
-.top i{
-    color:white;
-    font-size: 2rem;
-    margin-left:1rem;
+  margin-right: 2rem;
+  margin-top: 1rem;
 }
 
-.top i:hover{
-    color:#d3e55c;
+.top i {
+  color: white;
+  font-size: 2rem;
+  margin-left: 1rem;
+}
+
+.top i:hover {
+  color: #d3e55c;
 }
 
 .bottom {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start; 
-  }
-  
-  
-  .bottom .location,
-  .bottom .phone,
-  .bottom .email {
-    margin-bottom: 10px; 
-    display: flex;
-    align-items: center; 
-  }
-  
-  
-  .bottom i {
-    margin-right: 5px; 
-  }
-  
-  .aboutcompany {
-    max-width: 300px; 
-  }
-  
-  .aboutcompany p {
-    margin-top: 10px;
-    margin-bottom: 10px;
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
 
-  .companyicons {
-    margin-top: 20px; 
-    display: flex;
-    align-items: center; 
+.bottom .location,
+.bottom .phone,
+.bottom .email {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
 
-  }
-  
-.copyright{
-    color:#2b2c2c;
-   
+.bottom i {
+  margin-right: 5px;
+}
+
+.aboutcompany {
+  max-width: 300px;
+}
+
+.aboutcompany p {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.companyicons {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.copyright {
+  color: #2b2c2c;
 }
 
 @media screen and (max-width: 860px) {
-    .footer {
-        padding: 2rem; 
-    }
+  .footer {
+    padding: 2rem;
+  }
 
-    .top {
-        flex-direction: column; 
-        align-items: flex-start; 
-    }
-    .aboutcompany {
-        max-width: 100%; 
-        margin-top: 2rem;
-      }
-    .top .leftsection {
-        margin-right: 0; 
-        margin-top: 0; 
-        margin-bottom: 2rem; 
-    }
+  .top {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .aboutcompany {
+    max-width: 100%;
+    margin-top: 2rem;
+  }
+  .top .leftsection {
+    margin-right: 0;
+    margin-top: 0;
+    margin-bottom: 2rem;
+  }
 
-    .companyicons {
-        margin-top: 1rem; 
-    }
-    .copyright{
-        margin-top: 2rem;
-       
-    }
+  .companyicons {
+    margin-top: 1rem;
+  }
+  .copyright {
+    margin-top: 2rem;
+  }
 }
