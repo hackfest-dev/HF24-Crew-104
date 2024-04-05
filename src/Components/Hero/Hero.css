@@ -1,0 +1,39 @@
+.hero{
+    width: 100%;
+    min-height: 70vh;
+    background: url('../Assets/hero.jpeg') no-repeat;
+    background-size: cover;
+    filter: brightness(75%) contrast(1.5);
+    background-position: center;
+    color:white;
+    display: flex;
+    align-items:center;
+    justify-content:left;
+}
+
+.hero-text{
+    text-align: left;
+    max-width: 800px;
+
+}
+
+.hero-text h1{
+font-size: 60px;
+font-weight: 600;
+}
+
+.hero-text p{
+    max-width: 700px;
+    margin: 10px auto 20px;
+    line-height: 1.4;
+}
+
+@media(max-width:900px){
+.hero-text h1{
+    margin-top: 4rem;
+    margin-bottom:0rem;
+}
+.hero{
+    min-height: 90vh;
+}
+}
