@@ -1,7 +1,8 @@
 .footer{
     padding: 4rem 6rem;
-     background-color:#545E16;
+     background-color:#778138;
     color:white;
+    
 }
 
 .top{
@@ -63,27 +64,27 @@
   }
   
 .copyright{
-    color:gray;
+    color:#2b2c2c;
    
 }
 
 @media screen and (max-width: 860px) {
     .footer {
-        padding: 2rem; /* Adjust padding for smaller screens */
+        padding: 2rem; 
     }
 
     .top {
-        flex-direction: column; /* Stack items vertically */
-        align-items: flex-start; /* Align items to start */
+        flex-direction: column; 
+        align-items: flex-start; 
     }
     .aboutcompany {
         max-width: 100%; 
         margin-top: 2rem;
       }
     .top .leftsection {
-        margin-right: 0; /* Remove right margin for smaller screens */
-        margin-top: 0; /* Remove top margin for smaller screens */
-        margin-bottom: 2rem; /* Add bottom margin for separation */
+        margin-right: 0; 
+        margin-top: 0; 
+        margin-bottom: 2rem; 
     }
 
     .companyicons {
