@@ -3,7 +3,7 @@ body {
 }
 
 .sign-in-with-background {
-  background-image: url("../Assets/hero.jpeg");
+  background-image: url("../Assets/loginimage.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
