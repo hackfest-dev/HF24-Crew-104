@@ -1,0 +1,96 @@
+.footer{
+    padding: 4rem 6rem;
+     background-color:#545E16;
+    color:white;
+}
+
+.top{
+    display: flex;
+    align-items: center;
+    text-align: start;
+    justify-content: space-between;
+   
+}
+.top .left-section {
+    margin-right: 2rem; 
+    margin-top: 1rem;
+  }
+
+.top i{
+    color:white;
+    font-size: 2rem;
+    margin-left:1rem;
+}
+
+.top i:hover{
+    color:#d3e55c;
+}
+
+.bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; 
+  }
+  
+  
+  .bottom .location,
+  .bottom .phone,
+  .bottom .email {
+    margin-bottom: 10px; 
+    display: flex;
+    align-items: center; 
+  }
+  
+  
+  .bottom i {
+    margin-right: 5px; 
+  }
+  
+  .aboutcompany {
+    max-width: 300px; 
+  }
+  
+  .aboutcompany p {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  .companyicons {
+    margin-top: 20px; 
+    display: flex;
+    align-items: center; 
+
+  }
+  
+.copyright{
+    color:gray;
+   
+}
+
+@media screen and (max-width: 860px) {
+    .footer {
+        padding: 2rem; /* Adjust padding for smaller screens */
+    }
+
+    .top {
+        flex-direction: column; /* Stack items vertically */
+        align-items: flex-start; /* Align items to start */
+    }
+    .aboutcompany {
+        max-width: 100%; 
+        margin-top: 2rem;
+      }
+    .top .leftsection {
+        margin-right: 0; /* Remove right margin for smaller screens */
+        margin-top: 0; /* Remove top margin for smaller screens */
+        margin-bottom: 2rem; /* Add bottom margin for separation */
+    }
+
+    .companyicons {
+        margin-top: 1rem; 
+    }
+    .copyright{
+        margin-top: 2rem;
+       
+    }
+}
