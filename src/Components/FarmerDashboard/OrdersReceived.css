@@ -1,0 +1,17 @@
+.status-flex {
+    display: flex;
+    margin-left: 20px;
+  }
+  
+  .btns {
+    padding: 10px 20px;
+    margin-right: 6px;
+    background: transparent;
+    border: 0.6px solid #ccc;
+  }
+  
+  .custom-footer {
+    background-color: #123456; 
+  }
+  
+  
