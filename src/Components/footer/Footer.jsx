@@ -7,7 +7,7 @@ const Footer = ({ backgroundColor }) => {
 
     <div className='leftsection'>
         <h1>Farm2Door</h1>
-        <p>Lorem Ipsum Ipsumite</p>
+        <p>Harvesting Freshness, Delivering Locally</p>
     </div>
     <div className='bottom'>
     <div className="location">
@@ -26,7 +26,10 @@ const Footer = ({ backgroundColor }) => {
     <div>
    <div className='aboutcompany'>
     <h>ABOUT THE COMPANY</h>
-    <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus porttitor massa diam. Curabitur imperdiet euismod ex nec sollicitudin. Etiam tristique magna vitae ex convallis interdum.</p>
+    <p>At Farm2Door, we're dedicated to connecting farmers with consumers. 
+    With sustainable logistics and a commitment to quality, 
+    we bring farm-fresh goodness to your doorstep. 
+    Join us in supporting local agriculture</p>
    </div>
    <div className='companyicons'>
         <a href="./">
