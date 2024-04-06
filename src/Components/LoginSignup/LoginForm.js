@@ -24,31 +24,18 @@ const LoginForm = () => {
       return;
     }
 
-    try {
-      let response;
-      // Make a POST request to your login endpoint
-      // const response = await api.post('api/v1/token', {
-      //   email: username,
-      //   password,
-      // });
-  
-      if (response.status === 200) {
-        console.log('Request successful');
-        setSubmitted(true);
-        setError(null);
-        // Todo: Navigate to farmer/customer based on cookie response
-        navigate('/farmer-profile')
-      } else {
-        setSubmitted(false);
-        setError(`Response Code: ${response.code}, Error is ${response.data}`);
-      }
-      
-    } catch (error) {
-      console.error("Login failed:", error.response.data);
-    }
+    const uname = "chinmayeepatankar270503@gmail.com";
+    const pass = "123@456Abc";
 
-    setSubmitted(true);
-    setError(null);
+    if (username === uname && password === pass) {
+      setSubmitted(true);
+      setError(null);
+
+      navigate("/customer-home");
+    } else {
+      setSubmitted(false);
+      setError("Incorrect username or password!");
+    }
   };
 
   const handleForgotPassword = () => {

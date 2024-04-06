@@ -5,7 +5,17 @@ import "./CustomerProfile.css";
 const CustomerProfile = () => {
   const footerBackgroundColor = "#1c4c1e";
 
-  const [profileData, setProfileData] = useState({});
+  const [profileData, setProfileData] = useState({
+    username: "Chinmayee",
+    full_name: "Chinmayee Patankar",
+    location: "Hubli",
+    zipcode: "10001",
+    country: "Inida",
+    email: "chinmayeepatankar270503@gmail.com",
+    city: "Hubli",
+    state: "Karnataka",
+    phone: "123-456-7890",
+  });
 
   const [editMode, setEditMode] = useState(false);
 
@@ -20,7 +30,6 @@ const CustomerProfile = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    // Mock backend update operation
     console.log("Profile updated successfully");
     setEditMode(false);
   };
