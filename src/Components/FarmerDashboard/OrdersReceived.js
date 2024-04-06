@@ -27,6 +27,8 @@ function OrdersReceived() {
     });
   }
 
+  const filteredOrders = filteredData(orders, selectedCategory, query);
+
   return (
     <div>
       <NavbarFarmer />
@@ -37,9 +39,12 @@ function OrdersReceived() {
         <button className='btns' onClick={handleClick} value="Out for Delivery">Out for Delivery</button>
         <button className='btns' onClick={handleClick} value="Delivered">Delivered</button>
       </div>
-      <Orders orders={filteredData(orders, selectedCategory, query)} />
+      {filteredOrders.length === 0 ? (
+        <div className="no-orders-found">No orders found</div>
+      ) : (
+        <Orders orders={filteredOrders} />
+      )}
       <Footer backgroundColor={footerBackgroundColor} />      
-
     </div>
   );
 }

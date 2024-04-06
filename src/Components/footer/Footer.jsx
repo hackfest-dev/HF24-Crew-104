@@ -12,6 +12,7 @@ const Footer = ({ backgroundColor }) => {
         <div className="leftsection">
           <h1>Farm2Door</h1>
           <p>Harvesting Freshness, Delivering Locally</p>
+          <div className="copyright">2024 COPYRIGHTS: FARM2DOOR.com</div>
         </div>
         <div className="bottom">
           <div className="location">
@@ -27,9 +28,9 @@ const Footer = ({ backgroundColor }) => {
             <p>support@farm2door.com</p>
           </div>
         </div>
-        <div>
+        <div className="rightsection">
           <div className="aboutcompany">
-            <h>ABOUT THE COMPANY</h>
+            <h3>ABOUT THE COMPANY</h3>
             <p>
               At Farm2Door, we're dedicated to connecting farmers with
               consumers. With sustainable logistics and a commitment to quality,
@@ -53,7 +54,6 @@ const Footer = ({ backgroundColor }) => {
           </div>
         </div>
       </div>
-      <div className="copyright">2024 COPYRIGHTS: FARM2DOOR.com</div>
     </div>
   );
 };

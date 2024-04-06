@@ -14,18 +14,6 @@ function Orders({ orders }) {
     setSelectedOrder(null);
   };
 
-  const acceptOrder = () => {
-    // Your logic to handle accepting the order goes here
-    console.log("Order accepted:", selectedOrder);
-    setSelectedOrder(null);
-  };
-
-  const rejectOrder = () => {
-    // Your logic to handle rejecting the order goes here
-    console.log("Order rejected:", selectedOrder);
-    setSelectedOrder(null);
-  };
-
   return (
     <div>
       <div className="orders-container">
@@ -62,14 +50,6 @@ function Orders({ orders }) {
           </div>
           <div className="close-icon" onClick={closeOrder}>
             <FontAwesomeIcon icon={faTimes} />
-          </div>
-          <div className="buttons-container">
-            {selectedOrder.status === "New Orders" && (
-              <>
-                <button onClick={acceptOrder}>Accept</button>
-                <button onClick={rejectOrder}>Decline</button>
-              </>
-            )}
           </div>
         </div>
       )}
