@@ -67,10 +67,9 @@ const AddProduct = ({ onProductSubmit, onCancel, onSubmitCallback }) => {
       formData.append("quantity_type", formData.quantity_type);
       formData.append("price_type", formData.price_type);
 
-      // You can continue with your backend API call here
-
       console.log("Product added successfully");
-      onSubmitCallback(formData);
+
+      onProductSubmit(false);
 
       console.log("Continue button clicked!");
     } catch (error) {

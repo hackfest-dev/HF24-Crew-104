@@ -92,8 +92,6 @@ const ProductList = () => {
   const handleProductSubmit = async (newProduct) => {
     setIsAddingProduct(false);
     try {
-      // Send new product data to the API and update state with response
-
       setEditModes([...editModes, false]);
     } catch (error) {
       console.error("Error adding product:", error);
