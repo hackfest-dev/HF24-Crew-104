@@ -9,8 +9,9 @@ const Navbar = () => {
       window.scrollY > 50 ? setSticky(true) : setSticky(false);
     });
   }, []);
+
   const handleLoginButtonClick = () => {
-    window.location.href = "/register";
+    window.location.href = "/login";
   };
 
   return (
