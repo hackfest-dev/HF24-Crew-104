@@ -14,7 +14,7 @@ import FarmerProduct from "./Components/FarmerDashboard/FarmerProduct";
 import CustomerHome from "./Components/CustomerDashboard/CustomerHome";
 import CustomerProfile from "./Components/CustomerDashboard/CustomerProfile";
 import CustomerOrders from "./Components/CustomerDashboard/CustomerOrders";
-
+import Cart from "./Components/CustomerDashboard/Cart/Cart"
 function App() {
   return (
     <Router>
@@ -34,6 +34,7 @@ function App() {
         <Route path="/customer-home" element={<CustomerHome />}></Route>
         <Route path="/customer-profile" element={<CustomerProfile />}></Route>
         <Route path="/customer-orders" element={<CustomerOrders />}></Route>
+        <Route path="/cart" element={<Cart />}></Route>
       </Routes>
     </Router>
   );

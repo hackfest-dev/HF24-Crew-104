@@ -25,11 +25,12 @@ const LoginForm = () => {
     }
 
     try {
+      let response;
       // Make a POST request to your login endpoint
-      const response = await api.post('api/v1/token', {
-        email: username,
-        password,
-      });
+      // const response = await api.post('api/v1/token', {
+      //   email: username,
+      //   password,
+      // });
   
       if (response.status === 200) {
         console.log('Request successful');

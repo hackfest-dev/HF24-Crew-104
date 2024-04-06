@@ -28,15 +28,15 @@ function OrderList({ searchQuery = "" }) {
   );
 
   return (
-    <div className="customer-orders-container">
-      <div className="order-column">
+    <div className="order-list-container">
+      <div className="order-list-column">
         {ordersLeft.map((order, index) => (
           <div
-            className="order-box"
+            className="order-list-box"
             key={index}
             onClick={() => expandOrder(order)}
           >
-            <div className="order-info">
+            <div className="order-list-info">
               <div>
                 <strong>Order No.:</strong> {order.orderNo}
               </div>
@@ -47,14 +47,14 @@ function OrderList({ searchQuery = "" }) {
           </div>
         ))}
       </div>
-      <div className="order-column">
+      <div className="order-list-column">
         {ordersRight.map((order, index) => (
           <div
-            className="order-box"
+            className="order-list-box"
             key={index}
             onClick={() => expandOrder(order)}
           >
-            <div className="order-info">
+            <div className="order-list-info">
               <div>
                 <strong>Order No.:</strong> {order.orderNo}
               </div>
@@ -66,7 +66,7 @@ function OrderList({ searchQuery = "" }) {
         ))}
       </div>
       {selectedOrder && (
-        <div className="expanded-order">
+        <div className="o-expanded-order">
           <div className="order-info">
             <div>
               <strong>Order No.:</strong> {selectedOrder.orderNo}

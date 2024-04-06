@@ -1,16 +1,14 @@
-import { React, useEffect, useState } from "react";
+import React from "react";
 import NavbarCustomer from "./NavbarCustomer";
-
-import Footer from "../footer/Footer";
+import Myproducts from "./Myproducts/Myproducts";
+import './CustomerHome.css'
 
 function CustomerHome() {
-  const footerBackgroundColor = "#1c4c1e";
-
   return (
     <div>
       <NavbarCustomer />
-
-      <Footer backgroundColor={footerBackgroundColor} />
+      
+      <Myproducts />
     </div>
   );
 }
