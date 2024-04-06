@@ -29,42 +29,48 @@ function OrderList({ searchQuery = "" }) {
 
   return (
     <div className="order-list-container">
-      <div className="order-list-column">
-        {ordersLeft.map((order, index) => (
-          <div
-            className="order-list-box"
-            key={index}
-            onClick={() => expandOrder(order)}
-          >
-            <div className="order-list-info">
-              <div>
-                <strong>Order No.:</strong> {order.orderNo}
+      {filteredOrders.length === 0 ? (
+        <p>No such orders found</p>
+      ) : (
+        <>
+          <div className="order-list-column">
+            {ordersLeft.map((order, index) => (
+              <div
+                className="order-list-box"
+                key={index}
+                onClick={() => expandOrder(order)}
+              >
+                <div className="order-list-info">
+                  <div>
+                    <strong>Order No.:</strong> {order.orderNo}
+                  </div>
+                  <div>
+                    <strong>Product:</strong> {order.product}
+                  </div>
+                </div>
               </div>
-              <div>
-                <strong>Product:</strong> {order.product}
-              </div>
-            </div>
+            ))}
           </div>
-        ))}
-      </div>
-      <div className="order-list-column">
-        {ordersRight.map((order, index) => (
-          <div
-            className="order-list-box"
-            key={index}
-            onClick={() => expandOrder(order)}
-          >
-            <div className="order-list-info">
-              <div>
-                <strong>Order No.:</strong> {order.orderNo}
+          <div className="order-list-column">
+            {ordersRight.map((order, index) => (
+              <div
+                className="order-list-box"
+                key={index}
+                onClick={() => expandOrder(order)}
+              >
+                <div className="order-list-info">
+                  <div>
+                    <strong>Order No.:</strong> {order.orderNo}
+                  </div>
+                  <div>
+                    <strong>Product:</strong> {order.product}
+                  </div>
+                </div>
               </div>
-              <div>
-                <strong>Product:</strong> {order.product}
-              </div>
-            </div>
+            ))}
           </div>
-        ))}
-      </div>
+        </>
+      )}
       {selectedOrder && (
         <div className="o-expanded-order">
           <div className="order-info">
