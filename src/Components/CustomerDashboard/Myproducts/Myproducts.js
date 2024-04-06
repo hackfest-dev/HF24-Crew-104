@@ -5,7 +5,7 @@ import './Myproducts.css';
 function Cart({ cart }) {
   return (
     <div>
-      <h2></h2>
+      <h2>Cart</h2>
       {cart.length > 0 ? (
         cart.map(item => (
           <div key={item.id}>
@@ -17,13 +17,13 @@ function Cart({ cart }) {
           </div>
         ))
       ) : (
-        <p></p>
+        <p>Your cart is empty</p>
       )}
     </div>
   );
 }
 
-function ProductCard({ product, addToCart }) {
+function ProductCard({ product }) {
   const [selectedQuantity, setSelectedQuantity] = useState(1);
 
   const handleQuantityChange = (event) => {
@@ -40,14 +40,7 @@ function ProductCard({ product, addToCart }) {
   }
 
   const handleAddToCart = () => {
-    const item = {
-      id: product.id,
-      name: product.name,
-      img: product.img,
-      price: product.price,
-      quantity: selectedQuantity
-    };
-    addToCart(item);
+    // Do nothing when the button is clicked
   };
 
   return (
@@ -65,7 +58,6 @@ function ProductCard({ product, addToCart }) {
             <i className='fa-solid fa-plus'></i> Add
           </button>
         </div>
-        
       </div>
     </div>
   );
@@ -89,10 +81,6 @@ function Myproducts() {
     ? products.filter(product => isBulkOrder(product))
     : products.filter(product => !isBulkOrder(product));
 
-  const addToCart = (item) => {
-    setCart([...cart, item]);
-  };
-
   return (
     <div>
       <div className="order-buttons">
@@ -101,10 +89,10 @@ function Myproducts() {
       </div>
       <div className='product-container'>
         {filteredProducts.map(product => (
-          <ProductCard key={product.id} product={product} addToCart={addToCart} />
+          <ProductCard key={product.id} product={product} />
         ))}
       </div>
-      <Cart cart={cart} />
+     
     </div>
   );
 }
