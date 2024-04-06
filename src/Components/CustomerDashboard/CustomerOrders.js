@@ -10,10 +10,7 @@ function CustomerOrders() {
   return (
     <div className="original">
       <NavbarCustomer setSearchQuery={setSearchQuery} />
-      <div className="main-content">
-        <OrderList searchQuery={searchQuery} />
-      </div>
-
+      <OrderList searchQuery={searchQuery} />
       <Footer backgroundColor={footerBackgroundColor} />
     </div>
   );
