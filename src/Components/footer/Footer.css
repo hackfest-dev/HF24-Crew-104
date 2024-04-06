@@ -15,6 +15,13 @@
   margin-top: 1rem;
 }
 
+.rightsection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
 .top i {
   color: white;
   font-size: 2rem;
@@ -47,19 +54,21 @@
   max-width: 300px;
 }
 
-.aboutcompany p {
-  margin-top: 10px;
-  margin-bottom: 10px;
+.aboutcompany p,
+h3 {
+  margin: 10px;
 }
 
 .companyicons {
-  margin-top: 20px;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
+  width: 100%;
 }
 
 .copyright {
   color: #2b2c2c;
+  width: 100%;
+  margin-top: 20px;
 }
 
 @media screen and (max-width: 860px) {
