@@ -16,4 +16,7 @@ urlpatterns = [
     path('create', views.Farmer.create, name = 'add_product_farmer' ),
     # path('product/',include(route.urls)),
     path('retrieve',views.Farmer.retrieve, name='get_products'),
+    path('product/<int:pk>/update', views.Farmer.update, name='update'),
+    path('product/<int:pk>/delete', views.Farmer.delete_product, name='delete'),
+
 ]+ static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

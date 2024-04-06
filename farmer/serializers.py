@@ -1,6 +1,7 @@
 from rest_framework import serializers
-from drf_extra_fields.fields import Base64ImageField
+from django.core.files.base import ContentFile
 from .models import FarmerProfile, Product
+from django.conf import settings
 
 class FarmerSerializer(serializers.ModelSerializer):
     class Meta:
@@ -10,20 +11,26 @@ class FarmerSerializer(serializers.ModelSerializer):
         ]
 
 
-# class ProductSerializer(serializers.ModelSerializer):
-#     # image = Base64ImageField(max_length=None, use_url=True)
-#     farmer = serializers.PrimaryKeyRelatedField(queryset=FarmerProfile.objects.all(), write_only = True)
-#     quantity_type = serializers.CharField(allow_null=True)
-#     price_type = serializers.CharField(allow_null=True)
 
-
-#     class Meta:
-#         model = Product
-#         fields = ['_id', 'name', 'description', 'available_quantity', 'price_per_unit', 'quantity_type', 'price_type', 'image', 'farmer', 'created_at']
 class ProductSerializer(serializers.ModelSerializer):
-    # image = serializers.ImageField()
-    # # image = Base64ImageField(max_length=None, use_url=True)
-    # farmer = FarmerSerializer(read_only = True)
+    image = serializers.ImageField(write_only=True)  
+    image_url = serializers.SerializerMethodField()  
+
     class Meta:
         model = Product
-        fields = '__all__'
+        fields = ('_id', 'name', 'description', 'available_quantity', 'price_per_unit', 'price_type', 'quantity_type', 'image', 'image_url')  # Include 'image_url'
+
+    def create(self, validated_data):
+        image = validated_data.pop('image')  # Extract image data
+        product = Product.objects.create(**validated_data)  # Create product without image
+
+        # Save the image using ContentFile
+        product.image.save(f'product_{product._id}.jpg', ContentFile(image.read()))
+
+        return product
+
+    def get_image_url(self, obj):
+        return f"{settings.MEDIA_URL}{obj.image}"  # Assuming 'image' field stores filename
+
+
+       

@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import "./LoginForm.css";
 import { validatePassword } from "./validatePassword";
 import { Link, useNavigate } from "react-router-dom";
+import axios from 'axios';
+import api from '../../Utils/AxiosInterceptor';
 
 const LoginForm = () => {
   const [username, setUsername] = useState("");
@@ -41,7 +43,7 @@ const LoginForm = () => {
         setSubmitted(false);
         setError(`Response Code: ${response.code}, Error is ${response.data}`);
       }
-      
+
     } catch (error) {
       console.error("Login failed:", error.response.data);
     }

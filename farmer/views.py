@@ -16,8 +16,10 @@ from .models import FarmerProfile, Product
 from .serializers import FarmerSerializer, ProductSerializer
 from userAuth.serializers import UserSerializer
 import requests
+from django.core.exceptions import ObjectDoesNotExist
 import json
-from .utils import decode_base64_image, save_base64_image
+from django.core.files.base import ContentFile
+
 
 
 
@@ -150,3 +152,75 @@ class Farmer():
         except Exception as e:
             print(str(e))
             return JsonResponse({'error': str(e)}, status=500)
+        
+    
+    @api_view(['GET'])
+    @permission_classes([IsAuthenticated])
+    def retrieve(request, pk=None):
+        try:
+            user = request.user
+            profile = FarmerProfile.objects.filter(user=user).first()
+
+            # Filter products based on the farmer profile
+            products = Product.objects.filter(farmer=profile)
+            serializer = ProductSerializer(products, many=True)
+            return Response(serializer.data)
+        except ObjectDoesNotExist:
+            return Response({'error': 'Farmer profile not found'}, status=status.HTTP_404_NOT_FOUND)
+        
+    
+    @permission_classes([IsAuthenticated])
+    @api_view(['POST'])
+    def create(request):
+        serializer = ProductSerializer(data=request.data)
+        if serializer.is_valid():
+            # Associate the product with the current farmer
+            try:
+                # Retrieve all FarmerProfiles associated with the user
+                profiles = FarmerProfile.objects.filter(user=request.user)
+                if profiles.exists():
+                    # Select the first FarmerProfile
+                    profile = profiles.first()
+                    serializer.save(farmer=profile)
+                    image = serializer.validated_data.pop('image')
+                    product = serializer.save(farmer=profile)  # Save product without image
+                    product.image.save(f'product_{product.pk}.jpg', ContentFile(image.read()))  # Save image separately
+
+                    return Response(serializer.data, status=status.HTTP_201_CREATED)
+                else:
+                    return Response({"error": "No Farmer profile found for this user"}, status=status.HTTP_404_NOT_FOUND)
+            except Exception as e:
+                return Response({'error': f"An error occurred while creating the product: {str(e)}"}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    @api_view(['PUT'])
+    @permission_classes([IsAuthenticated])
+    def update(request, pk):
+        try:
+            product = Product.objects.get(pk=pk)
+            serializer = ProductSerializer(product, data=request.data)
+            if serializer.is_valid():
+                serializer.save()
+                return Response(serializer.data, status=status.HTTP_200_OK)
+            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        except ObjectDoesNotExist:
+            return Response({'error': 'Product not found'}, status=status.HTTP_404_NOT_FOUND)
+        except Exception as e:
+            return Response({'error': f'An error occurred while updating the product: {str(e)}'}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+    @api_view(['DELETE'])
+    @permission_classes([IsAuthenticated])   
+    def delete_product(request, pk):
+        # Retrieve the product instance based on the pk
+        
+        product = Product.objects.get(pk=pk)
+        if product:
+            product.delete()
+        
+        
+            # Delete the product instance
+        
+            # Return appropriate response
+            return JsonResponse({'message': 'Product deleted successfully'}, status=204)
+        else:
+            return JsonResponse({'error': 'Invalid request method'}, status=405)
+
+    
