@@ -1,0 +1,109 @@
+body {
+  margin: 0;
+}
+
+.profile-container {
+  background-image: url("../Assets/farmer.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile-info {
+  padding: 2rem;
+  margin: 1rem;
+  background-color: rgba(100, 154, 25, 0.5);
+  border-radius: 15px;
+  width: 50rem;
+  height: 50%;
+  display: flex;
+  margin-bottom: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.edit-profile-button {
+  display: flex;
+  width: 100%;
+  flex-direction: row-reverse;
+}
+
+.edit-profile-button button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.save-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.save-button button {
+  width: 30%;
+  padding: 10px;
+  text-align: center;
+  background-color: white;
+  color: black;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: medium;
+}
+
+.save-button button:hover {
+  background-color: #3e8e41;
+}
+
+.main-details {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.item {
+  flex: 1;
+  padding: 2rem;
+  margin: 0.5rem;
+}
+
+.profile-field {
+  margin-bottom: 1rem;
+}
+
+.profile-field label {
+  display: block;
+  margin-bottom: 1rem;
+  font-weight: bolder;
+  font-size: larger;
+}
+
+.profile-field input {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  font-weight: bold;
+  color: black;
+  font-size: medium;
+}
+
+.profile-container h1 {
+  text-align: center;
+  font-size: 3.5rem;
+  color: rgba(100, 154, 25);
+}
+
+@media (max-width: 768px) {
+  .profile-info {
+    width: 20rem;
+  }
+}
