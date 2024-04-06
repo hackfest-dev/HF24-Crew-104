@@ -1,4 +1,4 @@
-.customer-orders-container {
+.order-list-container {
   margin-top: 6rem;
   display: flex;
   flex-wrap: wrap;
@@ -11,12 +11,12 @@
   margin-right: 20px;
 }
 
-.order-column {
+.order-list-column {
   margin: 10px;
   width: 40%;
 }
 
-.order-box {
+.order-list-box {
   border: 1px solid #ccc;
   border-radius: 5px;
   padding: 10px;
@@ -27,12 +27,12 @@
   flex-direction: row;
 }
 
-.order-info {
+.order-list-info {
   font-size: 14px;
   margin-bottom: 5px;
 }
 
-.expanded-order {
+.o-expanded-order {
   position: fixed;
   top: 50%;
   left: 50%;

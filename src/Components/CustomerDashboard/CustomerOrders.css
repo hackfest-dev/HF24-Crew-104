@@ -1,0 +1,7 @@
+.no-orders{
+    display: flex;
+    min-height: 469px;
+    justify-content: center;
+    align-items: center;
+    color: gray;
+}

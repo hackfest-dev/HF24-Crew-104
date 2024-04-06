@@ -4,7 +4,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEdit } from "@fortawesome/free-solid-svg-icons";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
 import AddProduct from "./AddProduct";
-import axios from "axios";
 
 const ProductList = () => {
   const [products, setProducts] = useState([]);
@@ -76,7 +75,7 @@ const ProductList = () => {
   const handleDeleteClick = async (index) => {
     try {
       const productId = products[index]._id;
-      await axios.delete(`your_api_endpoint/${productId}`);
+      //await axios.delete(`your_api_endpoint/${productId}`);
 
       const newProducts = [...products];
       newProducts.splice(index, 1);
