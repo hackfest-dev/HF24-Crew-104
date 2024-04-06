@@ -5,13 +5,16 @@ import Footer from "../footer/Footer";
 
 function CustomerOrders() {
   const [searchQuery, setSearchQuery] = useState("");
+  const footerBackgroundColor = "#1c4c1e";
 
   return (
-    <div>
+    <div className="original">
       <NavbarCustomer setSearchQuery={setSearchQuery} />
-      <OrderList searchQuery={searchQuery} />
+      <div className="main-content">
+        <OrderList searchQuery={searchQuery} />
+      </div>
 
-      <Footer />
+      <Footer backgroundColor={footerBackgroundColor} />
     </div>
   );
 }

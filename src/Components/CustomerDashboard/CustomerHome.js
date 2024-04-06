@@ -4,11 +4,13 @@ import NavbarCustomer from "./NavbarCustomer";
 import Footer from "../footer/Footer";
 
 function CustomerHome() {
+  const footerBackgroundColor = "#1c4c1e";
+
   return (
     <div>
       <NavbarCustomer />
 
-      {/* <Footer /> */}
+      <Footer backgroundColor={footerBackgroundColor} />
     </div>
   );
 }
