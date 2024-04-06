@@ -1,8 +1,7 @@
-"""
-URL configuration for farm2door project.
+"""farm2door URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/4.2/topics/http/urls/
+    https://docs.djangoproject.com/en/4.1/topics/http/urls/
 Examples:
 Function views
     1. Add an import:  from my_app import views
@@ -15,8 +14,14 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path,include
+from rest_framework_simplejwt import views as jwt_views
+from userAuth import views as userAuth
 
 urlpatterns = [
     path("admin/", admin.site.urls),
+    path('api/v1/customer/', include('customer.urls')),
+    path('api/v1/farmer/', include('farmer.urls')),
+    path('api/v1/token', userAuth.CustomTokenObtainPairView.as_view(), name='token_obtain_pair'),
+    path('api/v1/token/refresh', jwt_views.TokenRefreshView.as_view(), name = "token_refresh"),
 ]

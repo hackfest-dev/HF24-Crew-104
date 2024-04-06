@@ -4,6 +4,7 @@ import "./FarmerProfile.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEdit } from "@fortawesome/free-solid-svg-icons";
 import React, { useState, useEffect } from "react";
+import api from "../../Utils/AxiosInterceptor";
 
 const FarmerProfile = () => {
   const [profileData, setProfileData] = useState(null);
@@ -15,6 +16,7 @@ const FarmerProfile = () => {
     const fetchProfileData = async () => {
       try {
         // backend get api
+        const response = await api.get("api/v1/farmer/profile");
         setProfileData(response.data);
       } catch (error) {
         console.error("Error fetching profile data:", error);
