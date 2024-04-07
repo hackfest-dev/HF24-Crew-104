@@ -82,7 +82,7 @@ const SignupFormFarmer = () => {
 
     try {
       //   response = { put backend api }
-      //response = await api.post('api/v1/farmer/signup', formData);
+      response = await api.post('api/v1/farmer/signup', formData);
       if (response.status === 200) {
         console.log("Request successful");
         setSubmitted(true);

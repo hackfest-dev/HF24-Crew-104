@@ -177,7 +177,7 @@ const FarmerProfile = () => {
                     type="tel"
                     id="phone"
                     name="phone"
-                    value={profileData.phone}
+                    value={9515193555}
                     disabled
                   />
                 </div>
