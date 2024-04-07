@@ -189,3 +189,4 @@ const AddProduct = ({ onProductSubmit, onCancel, onSubmitCallback }) => {
 };
 
 export default AddProduct;
+

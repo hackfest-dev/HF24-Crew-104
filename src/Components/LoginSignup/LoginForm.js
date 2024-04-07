@@ -25,42 +25,79 @@ const LoginForm = () => {
       setError(passwordError);
       return;
     }
+    // const uname = "chinmayeepatankar270503@gmail.com";
+    // const pass = "123@456Abc";
+
+ 
+    // if (username === uname && password === pass) {
+    //   setSubmitted(true);
+    //   setError(null);
+
+    //   navigate("/customer-home");
+    // } else {
+    //   setSubmitted(false);
+    //   setError("Incorrect username or password!");
+    // }
 
 
-//     try {
-//       // Make a POST request to your login endpoint
-//       const response = await api.post('api/v1/token', {
-//         email: username,
-//         password,
-//       });
+    // try {
+    //   // Make a POST request to your login endpoint
+    //   const response = await api.post('api/v1/token', {
+    //     email: username,
+    //     password,
+    //   });
   
-//       if (response.status === 200) {
-//         console.log('Request successful');
-//         setSubmitted(true);
-//         setError(null);
-//         // Todo: Navigate to farmer/customer based on cookie response
-//         navigate('/farmer-profile')
-//       } else {
-//         setSubmitted(false);
-//         setError(`Response Code: ${response.code}, Error is ${response.data}`);
-//       }
+    //   if (response.status === 200) {
+    //     console.log('Request successful');
+    //     setSubmitted(true);
+    //     setError(null);
+    //     // Todo: Navigate to farmer/customer based on cookie response
+    //     navigate('/farmer-profile')
+    //   } else {
+    //     setSubmitted(false);
+    //     setError(`Response Code: ${response.code}, Error is ${response.data}`);
+    //   }
 
-//     } catch (error) {
-//       console.error("Login failed:", error.response.data);
-//     }
-
+    // } catch (error) {
+    //   console.error("Login failed:", error.response.data);
+    // }
     const uname = "chinmayeepatankar270503@gmail.com";
-    const pass = "123@456Abc";
+const pass = "123@456Abc";
 
-    if (username === uname && password === pass) {
+if (username === uname && password === pass) {
+  // If the username and password match the hardcoded values
+  setSubmitted(true);
+  setError(null);
+  navigate("/customer-home");
+} else {
+  // If the username and password don't match the hardcoded values
+  try {
+    // Make a POST request to your login endpoint
+    const response = await api.post('api/v1/token', {
+      email: username,
+      password,
+    });
+
+    if (response.status === 200) {
+      // If the login request is successful
+      console.log('Request successful');
       setSubmitted(true);
       setError(null);
-
-      navigate("/customer-home");
+      // Todo: Navigate to farmer/customer based on cookie response
+      navigate('/farmer-profile');
     } else {
+      // If the login request is not successful
       setSubmitted(false);
-      setError("Incorrect username or password!");
+      setError(`Response Code: ${response.code}, Error is ${response.data}`);
     }
+  } catch (error) {
+    // If an error occurs during the login request
+    console.error("Login failed:", error.response.data);
+  }
+}
+
+
+    
   };
 
   const handleForgotPassword = () => {
